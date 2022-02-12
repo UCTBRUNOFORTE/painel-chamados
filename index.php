@@ -2,14 +2,12 @@
 
 include('config.php');
 
-if(isset($_GET['plataforma'])){
+if (isset($_GET['plataforma'])) {
 
-$plataforma = $_GET['plataforma'];
-
-}else{
+    $plataforma = $_GET['plataforma'];
+} else {
 
     $plataforma = '1';
-
 }
 
 ?>
@@ -29,9 +27,7 @@ $plataforma = $_GET['plataforma'];
 
     <!-- Custom fonts for this template-->
     <link href="vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
-    <link
-        href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i"
-        rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i" rel="stylesheet">
 
     <!-- Custom styles for this template-->
     <link href="css/sb-admin-2.min.css" rel="stylesheet">
@@ -54,7 +50,7 @@ $plataforma = $_GET['plataforma'];
                 <!-- Begin Page Content -->
                 <div class="container-fluid">
                     <h1 class="h3 mb-0 text-gray-800 text-center display-1">Chamados <sup class="h5">
-                        <?php
+                            <?php
 
                             switch ($plataforma) {
                                 case '1':
@@ -62,32 +58,32 @@ $plataforma = $_GET['plataforma'];
                                     break;
                                 case '2':
                                     echo 'Bitrix24';
-                                    break;                                   
-                                
+                                    break;
+
                                 default:
                                     # code...
                                     break;
                             }
 
-                        ?>
-                    </sup>
+                            ?>
+                        </sup>
                     </h1>
 
 
                     <?php
 
-                   switch ($plataforma) {
+                    switch ($plataforma) {
                         case '1':
                             include('tomticket.php');
                             break;
                         case '2':
                             include('bitrix24.php');
                             break;
-                       
-                       default:
-                           
-                           break;
-                   }
+
+                        default:
+
+                            break;
+                    }
 
                     ?>
 
@@ -135,6 +131,38 @@ $plataforma = $_GET['plataforma'];
     <script src="js/demo/chart-area-demo.js"></script>
     <script src="js/demo/chart-pie-demo.js"></script>
 
+    <script>
+        function ler_chamado() {
+
+            fetch('novos.txt')
+                .then(response => response.text())
+                .then(text => {
+                    const array = text.split("\n");
+                    speechSynthesis.speak(new SpeechSynthesisUtterance(array));
+                })
+
+            salvar('http://187.60.56.85/painel-chamados/arquivo.php');
+
+            let myGreeting = setTimeout(function() {
+                ler_chamado();
+            }, 4000)
+        }
+
+
+        function salvar(yourUrl) {
+            var Httpreq = new XMLHttpRequest(); // a new request
+            Httpreq.open("GET", yourUrl, false);
+            Httpreq.send(null);
+            return Httpreq.responseText;
+        }
+        var json_obj = JSON.parse(Get("http://187.60.56.85/painel-chamados/arquivo.php"));
+
+        ler_chamado()
+    </script>
+
 </body>
+
+
+
 
 </html>
