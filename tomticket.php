@@ -3,6 +3,13 @@
                         <!-- Chamados novos -->
                         <div class="col-xl-4 col-md-6 mb-4">
                             <table class="table table-borderless">
+                                <tr>
+                                    <td>
+                                        <div class="card text-white bg-danger mb-3" style="mmax-width: 100%;">
+                                            <div class="card-header bg-danger">Chamados Novos</div>
+                                        </div>
+                                    </td>
+                                </tr>
                                 <?php
 
                                         $api = TRUE;
@@ -57,6 +64,13 @@
                         <!-- Chamados atribuidos -->
                         <div class="col-xl-4 col-md-6 mb-4">
                             <table class="table table-borderless" >
+                                <tr>
+                                    <td>
+                                        <div class="card text-white bg-warning mb-3" style="mmax-width: 100%;">
+                                            <div class="card-header bg-warning">Chamados Novos</div>
+                                        </div>
+                                    </td>
+                                </tr>
                                 <?php
 
                                         $api = TRUE;
@@ -111,6 +125,13 @@
                         <!-- Chamados Finalizados -->
                         <div class="col-xl-4 col-md-6 mb-4">
                             <table class="table table-borderless">
+                                <tr>
+                                    <td>
+                                        <div class="card text-white bg-success mb-3" style="mmax-width: 100%;">
+                                            <div class="card-header bg-success ">Chamados Novos</div>
+                                        </div>
+                                    </td>
+                                </tr>
                                 <?php
 
                                         $api = TRUE;
@@ -140,21 +161,10 @@
                                             <div class="card-body">
                                                 <h5 class="card-title"><?php echo $chamado['categoria']; ?></h5>
                                                 <p class="card-text">
-                                                    <?php 
-                                                    
-                                                        $palavras = explode(" ", $chamado['mensagem']);
-
-                                                        $descricao = "";
-
-                                                        for ($i = 0; $i <= 10; $i++) { 
-                                                            
-                                                            if(isset($palavras[$i])) $descricao .= " " . $palavras[$i];
-                                                            
-                                                        } 
-
-                                                        $descricao .= " ...";
-                                                            
-                                                        echo $descricao;
+                                                    <?php                                                    
+                                                                                                                    
+                                                        echo $chamado['mensagem'];
+                                                        
                                                     ?>
                                                 </p>
                                             </div>

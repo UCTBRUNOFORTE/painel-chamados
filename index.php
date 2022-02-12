@@ -60,9 +60,12 @@ $plataforma = $_GET['plataforma'];
                     <?php
 
                    switch ($plataforma) {
-                       case '1':
-                           include('tomticket.php');
-                           break;
+                        case '1':
+                            include('tomticket.php');
+                            break;
+                        case '2':
+                            include('bitrix24.php');
+                            break;
                        
                        default:
                            

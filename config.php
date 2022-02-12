@@ -4,6 +4,8 @@ define('API_TOMTICKET','https://api.tomticket.com/chamados/60fb6d24a4174c4294e64
 
 define('API_BITRIX24','https://uctbrasil.bitrix24.com.br/rest/977/2wv7bdkfcd1ozw8r/crm.deal.list.json?');
 
+define('GET_API_BITRIX24','https://uctbrasil.bitrix24.com.br/rest/977/4vgzjwh6d3oklhp1/crm.deal.get.json?ID=');
+
 define('NOVOS_BITRIX24','FILTER[STAGE_ID]=C39:NEW');
 
 define('NOVOS_ATRASADOS_BITRIX24','FILTER[STAGE_ID]=C39:UC_LA4T73');
