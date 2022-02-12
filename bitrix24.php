@@ -5,7 +5,7 @@
                             <table class="table table-borderless">
                                 <tr>
                                     <td>
-                                        <div class="card text-white bg-danger mb-3" style="mmax-width: 100%;">
+                                        <div class="card text-white bg-danger mb-3" style="max-width: 100%;">
                                             <div class="card-header bg-danger">Chamados Novos</div>
                                         </div>
                                     </td>
@@ -48,7 +48,7 @@
                                 ?>
                                 <tr>
                                     <td>
-                                        <div class="card text-white bg-danger mb-3" style="mmax-width: 100%;">
+                                        <div class="card text-white bg-danger mb-3" style="max-width: 100%;">
                                             <div class="card-header bg-danger"><?php echo ((!empty($chamado['TITLE'])) ? $chamado['TITLE'] : 'Titulo não informada'); ?></div>
                                             <div class="card-body">
                                                 <h5 class="card-title"><?php echo $categoria; ?></h5>
@@ -75,7 +75,7 @@
                             <table class="table table-borderless">
                                 <tr>
                                     <td>
-                                        <div class="card text-white bg-dark mb-3" style="mmax-width: 100%;">
+                                        <div class="card text-white bg-dark mb-3" style="max-width: 100%;">
                                             <div class="card-header bg-dark">Chamados Atrasados</div>
                                         </div>
                                     </td>
@@ -118,7 +118,7 @@
                                 ?>
                                 <tr>
                                     <td>
-                                        <div class="card text-white bg-dark mb-3" style="mmax-width: 100%;">
+                                        <div class="card text-white bg-dark mb-3" style="max-width: 100%;">
                                             <div class="card-header bg-dark"><?php echo ((!empty($chamado['TITLE'])) ? $chamado['TITLE'] : 'Titulo não informada'); ?></div>
                                             <div class="card-body">
                                                 <h5 class="card-title"><?php echo $categoria; ?></h5>
@@ -170,7 +170,7 @@
                                         ?>
                                         <tr>
                                             <td>
-                                                <div class="card text-white bg-dark mb-3" style="mmax-width: 100%;">
+                                                <div class="card text-white bg-dark mb-3" style="max-width: 100%;">
                                                     <div class="card-header bg-dark"><?php echo ((!empty($chamado['TITLE'])) ? $chamado['TITLE'] : 'Titulo não informada'); ?></div>
                                                     <div class="card-body">
                                                         <h5 class="card-title"><?php echo $categoria; ?></h5>
@@ -197,7 +197,7 @@
                             <table class="table table-borderless">
                                 <tr>
                                     <td>
-                                        <div class="card text-white bg-warning mb-3" style="mmax-width: 100%;">
+                                        <div class="card text-white bg-warning mb-3" style="max-width: 100%;">
                                             <div class="card-header bg-warning">Chamados Atribuidos</div>
                                         </div>
                                     </td>
@@ -240,7 +240,7 @@
                                 ?>
                                 <tr>
                                     <td>
-                                        <div class="card text-white bg-warning mb-3" style="mmax-width: 100%;">
+                                        <div class="card text-white bg-warning mb-3" style="max-width: 100%;">
                                             <div class="card-header bg-warning"><?php echo ((!empty($chamado['TITLE'])) ? $chamado['TITLE'] : 'Titulo não informada'); ?></div>
                                             <div class="card-body">
                                                 <h5 class="card-title"><?php echo $categoria; ?></h5>
@@ -267,7 +267,7 @@
                             <table class="table table-borderless">
                                 <tr>
                                     <td>
-                                        <div class="card text-white bg-success mb-3" style="mmax-width: 100%;">
+                                        <div class="card text-white bg-success mb-3" style="max-width: 100%;">
                                             <div class="card-header bg-success">Chamados Finalizados</div>
                                         </div>
                                     </td>
@@ -310,7 +310,7 @@
                                 ?>
                                 <tr>
                                     <td>
-                                        <div class="card text-white bg-success mb-3" style="mmax-width: 100%;">
+                                        <div class="card text-white bg-success mb-3" style="max-width: 100%;">
                                             <div class="card-header bg-success"><?php echo ((!empty($chamado['TITLE'])) ? $chamado['TITLE'] : 'Titulo não informada'); ?></div>
                                             <div class="card-body">
                                                 <h5 class="card-title"><?php echo $categoria; ?></h5>

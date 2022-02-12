@@ -53,7 +53,24 @@ $plataforma = $_GET['plataforma'];
 
                 <!-- Begin Page Content -->
                 <div class="container-fluid">
-                    <h1 class="h3 mb-0 text-gray-800 text-center display-1">Chamados <sup class="h5">Tom Ticket</sup>
+                    <h1 class="h3 mb-0 text-gray-800 text-center display-1">Chamados <sup class="h5">
+                        <?php
+
+                            switch ($plataforma) {
+                                case '1':
+                                    echo 'Tomticket';
+                                    break;
+                                case '2':
+                                    echo 'Bitrix24';
+                                    break;                                   
+                                
+                                default:
+                                    # code...
+                                    break;
+                            }
+
+                        ?>
+                    </sup>
                     </h1>
 
 
