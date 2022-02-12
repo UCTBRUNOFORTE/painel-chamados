@@ -9,12 +9,12 @@ $chamado = json_decode($response, true);
 switch ($chamado['result']['STAGE_ID']) {
     case 'C39:NEW':
 
-        file_put_contents(getcwd() . '/novos.txt', 'Novo chamado registrado ' .  $_REQUEST['data']['FIELDS']['TITLE'], FILE_APPEND);
+        file_put_contents(getcwd() . '/novos.txt', "\nNovo chamado registrado " .  $_REQUEST['data']['FIELDS']['TITLE'], FILE_APPEND);
 
         break;
     case 'C39:UC_LA4T73':
 
-        file_put_contents(getcwd() . '/novos.txt', 'Novo chamado atrasado para primeiro atendimento ' .  $_REQUEST['data']['FIELDS']['TITLE'], FILE_APPEND);
+        file_put_contents(getcwd() . '/novos.txt', "\nNovo chamado atrasado para primeiro atendimento " .  $_REQUEST['data']['FIELDS']['TITLE'], FILE_APPEND);
 
         break;
     case 'C39:PREPARATION':
@@ -22,7 +22,7 @@ switch ($chamado['result']['STAGE_ID']) {
         break;
     case 'C39:PREPAYMENT_INVOIC':
 
-        file_put_contents(getcwd() . '/novos.txt', 'Novo chamado atrasado ' .  $_REQUEST['data']['FIELDS']['TITLE'], FILE_APPEND);
+        file_put_contents(getcwd() . '/novos.txt', "\nNovo chamado atrasado " .  $_REQUEST['data']['FIELDS']['TITLE'], FILE_APPEND);
 
         break;
     case 'C39:WON':
