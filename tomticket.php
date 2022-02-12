@@ -67,7 +67,7 @@
                                 <tr>
                                     <td>
                                         <div class="card text-white bg-warning mb-3" style="mmax-width: 100%;">
-                                            <div class="card-header bg-warning">Chamados Novos</div>
+                                            <div class="card-header bg-warning">Chamados Atribuidos</div>
                                         </div>
                                     </td>
                                 </tr>
@@ -128,7 +128,7 @@
                                 <tr>
                                     <td>
                                         <div class="card text-white bg-success mb-3" style="mmax-width: 100%;">
-                                            <div class="card-header bg-success ">Chamados Novos</div>
+                                            <div class="card-header bg-success ">Chamados Finalizados</div>
                                         </div>
                                     </td>
                                 </tr>
@@ -164,7 +164,7 @@
                                                     <?php                                                    
                                                                                                                     
                                                         echo $chamado['mensagem'];
-                                                        
+
                                                     ?>
                                                 </p>
                                             </div>
