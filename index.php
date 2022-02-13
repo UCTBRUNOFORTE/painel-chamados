@@ -152,11 +152,10 @@ if (isset($_GET['plataforma'])) {
                 .then(text => {
                     const array = text.split("\n");
                     speechSynthesis.speak(new SpeechSynthesisUtterance(array));
-                })
-
-            salvar('http://187.60.56.85/painel-chamados/arquivo.php');
+                })           
 
             setTimeout(function() {
+                salvar('http://187.60.56.85/painel-chamados/arquivo.php');
                 ler_chamado();
             }, 4000)
         }
