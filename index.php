@@ -23,7 +23,7 @@ if (isset($_GET['plataforma'])) {
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>SB Admin 2 - Dashboard</title>
+    <title>Painel de chamados</title>
 
     <!-- Custom fonts for this template-->
     <link href="vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
@@ -45,8 +45,7 @@ if (isset($_GET['plataforma'])) {
         <div id="content-wrapper" class="d-flex flex-column">
 
             <!-- Main Content -->
-            <div id="content">
-
+            <div id="content">            
                 <!-- Begin Page Content -->
                 <div class="container-fluid">
                     <h1 class="h3 mb-0 text-gray-800 text-center display-1">Chamados <sup class="h5">
@@ -68,6 +67,8 @@ if (isset($_GET['plataforma'])) {
                             ?>
                         </sup>
                     </h1>
+                    <div class="text-right" style=" margin-top: -0.25em"><p><span id="segundos">20</span> Segundos para atualizar</p></div>
+                    
 
 
                     <?php
@@ -132,6 +133,18 @@ if (isset($_GET['plataforma'])) {
     <script src="js/demo/chart-pie-demo.js"></script>
 
     <script>
+
+        let plataforma = <?php echo $plataforma; ?>
+
+        if(plataforma == 1){
+
+            plataforma = 2;
+
+        }else{
+
+            plataforma = 1;
+
+        }
         function ler_chamado() {
 
             fetch('novos.txt')
@@ -143,7 +156,7 @@ if (isset($_GET['plataforma'])) {
 
             salvar('http://187.60.56.85/painel-chamados/arquivo.php');
 
-            let myGreeting = setTimeout(function() {
+            setTimeout(function() {
                 ler_chamado();
             }, 4000)
         }
@@ -155,9 +168,35 @@ if (isset($_GET['plataforma'])) {
             Httpreq.send(null);
             return Httpreq.responseText;
         }
-        var json_obj = JSON.parse(Get("http://187.60.56.85/painel-chamados/arquivo.php"));
+        var json_obj = JSON.parse(Get("http://187.60.56.85/painel-chamados/arquivo.php"));        
+
+        function atualizar_pagina() {
+
+            let segundos = document.getElementById('segundos');
+
+            if(parseInt(segundos.textContent) > 0){
+
+                segundos.innerHTML  = parseInt(segundos.textContent) - 1;
+
+            }else{
+
+                window.location.href = "http://187.60.56.85/painel-chamados?plataforma=" + plataforma;
+
+            }
+
+            
+
+            setTimeout(function() {
+                atualizar_pagina();
+            }, 1000)
+
+        }
+
+        atualizar_pagina();
 
         ler_chamado()
+
+
     </script>
 
 </body>
