@@ -178,6 +178,10 @@ if (isset($_GET['plataforma'])) {
 
                 segundos.innerHTML  = parseInt(segundos.textContent) - 1;
 
+                setTimeout(function() {
+                atualizar_pagina();
+            }, 1000)
+
             }else{
 
                 window.location.href = "http://187.60.56.85/painel-chamados?plataforma=" + plataforma;
@@ -186,20 +190,23 @@ if (isset($_GET['plataforma'])) {
 
             
 
-            setTimeout(function() {
-                atualizar_pagina();
-            }, 1000)
+            
 
         }
-
-        atualizar_pagina();
-
-        ler_chamado()
 
 
     </script>
 
 </body>
+
+<script>
+
+atualizar_pagina();
+
+ler_chamado()
+
+
+</script>
 
 
 
